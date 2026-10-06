@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  body {
+    background-color: #070b14;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom engineering dashboard utilities */
+.font-mono-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: 'tnum' on, 'zero' on;
+}
+
+.font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Glassmorphism styling */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.75) 0%, rgba(15, 23, 42, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-glow {
+  background: linear-gradient(135deg, rgba(20, 30, 48, 0.8) 0%, rgba(12, 18, 32, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.15);
+}
+
+.glass-panel-solar {
+  border-top: 2px solid #f59e0b;
+  box-shadow: 0 4px 20px -2px rgba(245, 158, 11, 0.08);
+}
+
+.glass-panel-wind {
+  border-top: 2px solid #06b6d4;
+  box-shadow: 0 4px 20px -2px rgba(6, 182, 212, 0.08);
+}
+
+.glass-panel-hybrid {
+  border-top: 2px solid #10b981;
+  box-shadow: 0 4px 20px -2px rgba(16, 185, 129, 0.08);
+}
+
+.glass-panel-h2 {
+  border-top: 2px solid #8b5cf6;
+  box-shadow: 0 4px 20px -2px rgba(139, 92, 246, 0.08);
+}
+
+/* Animated flow lines in SVG */
+@keyframes flowDash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-flow-fast {
+  animation: flowDash 1s linear infinite;
+}
+
+.animate-flow-normal {
+  animation: flowDash 2s linear infinite;
+}
+
+.animate-flow-slow {
+  animation: flowDash 3.5s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 8px currentColor);
+  }
+  50% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 2px currentColor);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090e1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
